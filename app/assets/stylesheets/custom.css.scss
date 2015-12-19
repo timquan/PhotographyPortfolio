@@ -1,0 +1,690 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$container-color: #fff7ee;
+$header-color2: #000010;
+$header-color1: #000;
+$color-border-bottom: gray;
+$body-color1: rgba(79,91,102, 0.4);
+$body-color2: rgba(192,197,206, 0.4);
+$color-description: #eaeaea;
+$color-border-top: #eaeaea;
+$color-logo: #FFF;
+$color-footer: #FFF;
+$color-footer-hover: gray-light;
+$color-blog-h3: #4C4C4C;
+$color-blog-h4: #65737e;
+$color-blog-p: #343d46;
+$profile-img: 'photographer_profile.jpg';
+$background-pic: 'grey_wash_wall.png';
+$color-image-hover: #101010;
+
+$color-h1: #FFF;
+$color-h2: #FFF;
+
+html { height:100%; } /* to get the gradient to stetch to the bottom of the view port */
+body {
+  // width: 100%;
+  background: $body-color2;
+  background: url($background-pic) repeat;
+  background-attachment: fixed;
+  background-size: cover;
+padding-top: 50px;
+  height: 100%;
+
+}
+
+.bg-img {
+background: -moz-radial-gradient(center, ellipse cover, $body-color1 0%, $body-color2 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0 $body-color1), color-stop(100%,$body-color2)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, $body-color1 0%,$body-color2 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, $body-color1 0%,$body-color2 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, $body-color1 0%,$body-color2 100%); /* IE10+ */
+background: radial-gradient(center, ellipse cover, $body-color1 0%,$body-color2 100%); /* W3C */
+background-repeat: repeat-y;
+background-attachment: fixed;
+ 
+min-height: 100%;
+
+}
+
+
+
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+@mixin background-opacity($color, $opacity: .3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+} 
+
+@mixin background-border-opacity($color, $opacity: .3) {
+    border-color: $color; /* The Fallback */
+    border-color: rgba($color, $opacity);
+} 
+
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: $color-image-hover;
+}
+
+.thumbnail{
+  position: relative;
+  padding: 0px;
+  .img-responsive{
+	  vertical-align: middle;
+  }
+  animation: fadein 2.5s;
+  @include background-border-opacity(#BFBFBF, $opacity: .4);
+}
+
+.img {
+	animation: fadein 2.5s;
+
+}
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-moz-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-ms-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-o-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+​ {
+}
+
+
+
+.description{
+  font-size: 13px;
+  position: absolute;
+  width:100%; 
+  text-align:center;
+  @include background-opacity(#4d4d4d, $opacity: .5);
+  color: $color-description;
+  z-index: 10;
+  bottom: 0px;
+  padding: 4px;
+}
+
+/* Article */
+
+.blog-container{
+  border-color: rgba($body-color1, 0.5);
+  border-style: solid;
+  border-width: .5px;
+  float: center;
+  @include box-sizing;
+  @include background-opacity(#96CDCD, .3);
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 40px;
+  padding-bottom: 45px;
+  line-height: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+  .blog-article{
+    @include box-sizing;
+    @include background-opacity($container-color, .85);
+
+
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+    border-radius: 10px;
+    border-color: rgba(#3399ff, 0.7);
+    border-style: solid;
+    border-width: .5px;
+    
+    line-height: 20px;
+    line-height: 1.625;
+    text-align: left;
+    h3 {
+
+      color: $color-blog-h3;
+      text-align: left;
+      margin-left: -2px;
+      margin-top: 10px;
+      font-size: 36px;
+    }
+
+    h4 {
+      color: $color-blog-h4;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    p{
+      color: $color-blog-p;
+      display: block;
+      font-size: 15px;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+    }
+
+  }
+
+
+.article{
+  line-height: 1.625;
+  text-align: left;
+  h3 {
+    text-align: left;
+    margin-left: -2px;
+    margin-top: 10px;
+    font-size: 36px;
+    color: red;
+  }
+  h4 {
+    color: blue;
+    font-size: 17px;
+    font-weight: bold;
+  }   
+  p {
+      font-size: 18px;
+      display: block;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+  }
+}
+
+// About Page
+
+.about-wrapper{
+  margin: 0 auto;
+  padding-bottom: 10%;
+  .left{
+  position: relative;
+    float: left;
+    height: 100%;
+    padding-left: 10%;
+    .content-text {
+		text-align: left;
+		padding-left: 30%;		
+	}
+
+	/* https://coderwall.com/p/z87nsq/how-to-make-a-circular-image-with-css-only */
+	.img-selfi-circular{
+		width: 200px;
+		height: 200px;
+		background-image: url($profile-img);
+		background-size: cover;
+		display: block;
+		border-radius: 100px;
+		-webkit-border-radius: 100px;
+		-moz-border-radius: 100px;
+		margin-bottom: 10px;
+	}
+  }
+  .right{
+   position: relative;
+    padding-left: 10%;
+  }
+
+}
+
+.container {
+  .jumbotron{
+    @include background-opacity($container-color, .7);
+	margin-top: 30px;
+	height: 400px;
+  }
+  h1 {
+	color: $color-h1;
+    margin-top: 12px;
+    letter-spacing: 2px;
+  }
+  h2 {
+    color: $color-h2;
+    font-size: 2.0em;
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 40px;
+		word-wrap: break-word;
+  }
+}
+
+ .left {
+   // width: 40%;
+   float: left;
+   height: 100%;
+   padding-left: 20%;
+   padding-right: 25px;
+ }
+
+ .right {
+   padding-left: 20%;
+
+ }
+
+.content-text {
+  text-align: left;
+  padding-left: 30%;
+}
+
+
+
+// Navbar
+
+.navbar {
+  background-image: linear-gradient(to bottom,$header-color1,$header-color2);
+  opacity: .97;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+background-color: gray;
+}
+
+.navbar-inverse{
+	border-color: $color-border-bottom;
+  }
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #FFF;
+	border-color: gray;
+  }
+
+.navbar ul ul {
+    display: none;
+}
+@media only screen and (min-width: 760px) {
+	.navbar li:hover ul {
+		display: block;
+	}
+}
+
+.navbar .nav > li > a {
+    float: none;
+    /* line-height: 19px; 
+    padding: 9px 10px 11px; */
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:  #fff;
+    &:hover {
+      color: gray-light;
+    }
+}
+
+
+
+
+
+/* universal */
+
+
+
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 45px;
+  }
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: $color-h1;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.0em;
+  line-height: 1.5em;
+}
+
+/* Carousel Styling */
+
+
+.carousel-inner{
+    height: 600px;
+}
+
+.carousel-inner img {
+  margin: 0 auto;
+}
+
+.carousel-control {
+    background-image: none !important; /* remove background gradients on controls */
+}
+
+.carousel .item {
+    -webkit-transition: opacity 0s; 
+    -moz-transition: opacity 0s; 
+    -ms-transition: opacity 0s; 
+    -o-transition: opacity 0s; 
+    transition: opacity 0s;
+	
+    height: 100% !important;
+    width:  auto !important;
+	max-width:auto; 
+    max-height:auto; 
+}
+.carousel .active.left {
+	opacity:0;
+	z-index:2;
+}
+.carousel .next {
+	opacity:1;
+	z-index:1;
+}
+
+
+
+
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    .carousel-inner {
+        height: 165px;
+    }
+	.container{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.blog-container{
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		line-height: 20px;
+		border-radius: 10px;
+		margin-top: 3px;
+		margin-bottom: 3px;
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+	.blog-article{
+
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    
+    h3 {
+      text-align: left;
+      margin-left: -2px;
+      margin-top: 10px;
+      font-size: 25px;
+    }
+
+    h4 {
+      font-size: 17px;
+    }
+
+    p{
+      font-size: 15px;
+    }
+
+  }
+  
+  
+  .container {
+  .jumbotron{
+	margin-top: 30px;
+	height: 600px;
+  }
+  h1 {
+	color: $color-h1;
+    margin-top: 12px;
+  }
+  h2 {
+    color: #8E44AD;
+    font-size: 2.0em;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+}
+
+ .left {
+   float: left;
+   height: 100%;
+   padding-left: 20%;
+   padding-right: 25px;
+   margin-bottom: 25px;
+ }
+
+ .right {
+   padding-left: 20%;
+ }
+
+.content-text {
+  text-align: left;
+  padding-left: 0%;
+}
+ 
+}
+
+
+/* laptops */
+@media (min-width: 767px) {
+    .carousel-inner {
+         height: 600px;
+    }
+
+}
+
+
+
+.copyright{
+	color: #FFF;
+}
+
+
+/* LightBox Styling */
+
+
+/* Image Styling */
+
+
+.img-responsive{
+  width: 100% !important;
+}
+
+
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 1.5em;
+  color: $color-logo;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $color-logo;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-top: 1px solid $color-border-top;
+  color: $color-footer;
+  a {
+    color: $color-footer;
+    &:hover {
+      color: $color-footer-hover;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+/* Forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+
+.form-group{
+  margin: 0 auto;
+  width: 70%;
+  margin-bottom: 15px;
+  @include box_sizing; 
+  label {
+    color: #cc3333;
+    font-size: 18px;
+  }
+}
+
+
+fieldset{
+	width: 60%;
+	position: relative;
+	left: 20%;
+	
+	select, input, textarea{
+		border-radius: 3px 3px 3px 3px;
+		-moz-border-radius: 3px 3px 3px 3px;
+		-webkit-border-radius: 3px 3px 3px 3px;
+		border: 0px solid #000000;
+		padding-left: 5px;
+	}
+	select{
+		height: 30px;	
+	}
+
+
+
+}
+
