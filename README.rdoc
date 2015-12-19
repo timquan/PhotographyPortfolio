@@ -1,5 +1,16 @@
 == README
 
+=About
+Here's the open source code to my Photography Portfolio website:
+http://sabrx.com
+
+=Features
+
+This tutorials is based around Digital Ocean's one-click-app feature using Ruby on Rails image. 
+https://www.digitalocean.com/features/one-click-apps/ruby-on-rails/
+
+It also uses the Paperclip Gem and Imagemagick
+
 =Installation Guide
 
 Make sure your server has atleast 1GB of Ram or else MySQL may not install.
@@ -50,7 +61,7 @@ Make sure your server has atleast 1GB of Ram or else MySQL may not install.
 
 12. Open your website in your web browser.
 
-=RailsAdmin
+=RailsAdmin: https://github.com/sferik/rails_admin
 * RailsAdmin is a Content Management Environment
 * Two gems, Paperclip and Imagemagick, added to allow file upload, scale, and image cropping.
 * Access RailsAdmin: {yourwebsite url}/admin
