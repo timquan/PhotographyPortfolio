@@ -36,10 +36,17 @@ Make sure your server has atleast 1GB of Ram or else MySQL may not install.
   * Run: `sudo apt-get install imagemagick`
 10. Generate devise key
   * Run: `RAILS_ENV=production rake secret`
-  * Paste results for production in PhotographyPortfolio/config/secrets.yml
+  * Paste results for production in `PhotographyPortfolio/config/secrets.yml`
 11. Modify
   * Run: `nano /etc/default/unicorn`
-  * Change 'APP_ROOT=/home/rails/rails_project' to 'APP_ROOT=/home/rails/PhotogrphyPortfolio'
+  * Change: 
+  ```ruby
+  APP_ROOT=/home/rails/rails_project
+  ```
+  To
+  ```ruby
+  APP_ROOT=/home/rails/PhotogrphyPortfolio
+  ```
 12. Restart unicorn and stop nginx service
   * Run: `service unicorn restart`
   * Run: `service nginx stop`
@@ -53,7 +60,7 @@ https://github.com/sferik/rails_admin
 * RailsAdmin is a Content Management Environment
 * Two gems, Paperclip and Imagemagick, added to allow file upload, scale, and image cropping.
 * Access RailsAdmin: {yourwebsite url}/admin
-* You can disable user registration by visisting `\PhotographyPortfolio\app\models\user.rb` and comment out :registerable. Remeber to comment out the comma in front of it as well.
+* You can disable user registration by visisting `\PhotographyPortfolio\app\models\user.rb` and comment out ```ruby :registerable ```. Remeber to comment out the comma in front of it as well.
 * Restart the process.
 * To crop image: Navigate to image -> Edit -> Click image -> Drag + Drop + Save area you want shown.
 * Cropping feature is a little flaky. If an overlay image doesn't appear, refresh.
