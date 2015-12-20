@@ -1,53 +1,52 @@
-== README
+#Photography Portfolio Web
 
-=About
+##About
 Here's the open source code to my Photography Portfolio website:
 http://sabrx.com
 
-=Features
+##Features
 
 This tutorials is based around Digital Ocean's one-click-app feature using Ruby on Rails image. 
 https://www.digitalocean.com/features/one-click-apps/ruby-on-rails/
 
 It also uses the Paperclip Gem and Imagemagick
-
-=Installation Guide
+##Installation Guide
 
 Make sure your server has atleast 1GB of Ram or else MySQL may not install.
 
-0. Have a server setup with Ruby on Rails. 
-* Following instructions for a system with Unicorn and Nginx pre-installed.
-1. Run: sudo apt-get update
-2. Install MySQL
-* Run: sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-3. Set Database Password
-* PhotographyPortfolio\config\database.yml
-4. Configure Action Mailer (emails) to an existing GMail account:
-* PhotographyPortfolio/config/environments
-* Edit :user_name and :password
-* Specify to address: /PhotographyPortfolio/app/mailers/contact_mailer.rb
-5. Install Gems
-* Run: bundle install
-6. Create Production DB
-* Run: RAILS_ENV=production rake db:create
-7. Create Tables
-* Run: rake db:migrate RAILS_ENV=production
-8. Install imagemagick
-* Run: sudo apt-get install imagemagick
-9. Generate devise key
-* Run: RAILS_ENV=production rake secret
-* Paste results for production in PhotographyPortfolio/config/secrets.yml
-10. Modify
-* Run: nano /etc/default/unicorn
-* Change 'APP_ROOT=/home/rails/rails_project' to 'APP_ROOT=/home/rails/PhotogrphyPortfolio'
-11. Restart unicorn and stop nginx service
-* Run: service unicorn restart
-* Run: service nginx stop
-12. Run your project
-* Run: rails server -e production -p 80
-13. Open your website in your web browser.
+1. Have a server setup with Ruby on Rails. 
+  * Following instructions for a system with Unicorn and Nginx pre-installed.
+2. Run: sudo apt-get update
+3. Install MySQL
+  * Run: sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+4. Set Database Password
+  * PhotographyPortfolio\config\database.yml
+5. Configure Action Mailer (emails) to an existing GMail account:
+  * PhotographyPortfolio/config/environments
+  * Edit :user_name and :password
+  * Specify to address: /PhotographyPortfolio/app/mailers/contact_mailer.rb
+6. Install Gems
+  * Run: bundle install
+7. Create Production DB
+  * Run: RAILS_ENV=production rake db:create
+8. Create Tables
+  * Run: rake db:migrate RAILS_ENV=production
+9. Install imagemagick
+  * Run: sudo apt-get install imagemagick
+10. Generate devise key
+  * Run: RAILS_ENV=production rake secret
+  * Paste results for production in PhotographyPortfolio/config/secrets.yml
+11. Modify
+  * Run: nano /etc/default/unicorn
+  * Change 'APP_ROOT=/home/rails/rails_project' to 'APP_ROOT=/home/rails/PhotogrphyPortfolio'
+12. Restart unicorn and stop nginx service
+  * Run: service unicorn restart
+  * Run: service nginx stop
+13. Run your project
+  * Run: rails server -e production -p 80
+14. Open your website in your web browser.
 
-=RailsAdmin: https://github.com/sferik/rails_admin
+##RailsAdmin: https://github.com/sferik/rails_admin
 * RailsAdmin is a Content Management Environment
 * Two gems, Paperclip and Imagemagick, added to allow file upload, scale, and image cropping.
 * Access RailsAdmin: {yourwebsite url}/admin
@@ -56,23 +55,23 @@ Make sure your server has atleast 1GB of Ram or else MySQL may not install.
 * To crop image: Navigate to image -> Edit -> Click image -> Drag + Drop + Save area you want shown.
 * Cropping feature is a little flaky. If an overlay image doesn't appear, refresh.
 
-=Making Album display image
+##Making Album display image
  Each album has an album cover. After you create album, you will need to edit and specify which picture associated with the album for album cover.
 
-=Running Your Server in the Background
+##Running Your Server in the Background
 * If you close your terminal, you may kill your server process.
 * Stop nginx as it may conflict with 'Screen'. Run: service nginx stop
 * Run: screen rails server -e production -p 80
 * Keep in mind if you need to restart your project, you may need to kill your process.
 
-=UI Customziations
+##UI Customziations
 * Code for About: \PhotographyPortfolio\app\views\home\about.html.erb
 * Code for Logo: \PhotographyPortfolio\app\views\layouts\_header.html.erb
 * Code for Footer Copyright: \PhotographyPortfolio\app\views\layouts\_footer.html.erb
 * Code Page Title: \PhotographyPortfolio\app\helpers\application_helper.rb
 * Styling: \PhotographyPortfolio\app\assets\stylesheets\custom.css.scss
 
-=FAQ
+##FAQ
 
 Killing Rails process
 * Go to tmp/pids and delete server.pids
