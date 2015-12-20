@@ -15,51 +15,37 @@ It also uses the Paperclip Gem and Imagemagick
 
 Make sure your server has atleast 1GB of Ram or else MySQL may not install.
 
-0: Have a server setup with Ruby on Rails. 
+0. Have a server setup with Ruby on Rails. 
 * Following instructions for a system with Unicorn and Nginx pre-installed.
-
 1. Run: sudo apt-get update
-
 2. Install MySQL
 * Run: sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-
 3. Set Database Password
 * PhotographyPortfolio\config\database.yml
-
 4. Configure Action Mailer (emails) to an existing GMail account:
 * PhotographyPortfolio/config/environments
 * Edit :user_name and :password
 * Specify to address: /PhotographyPortfolio/app/mailers/contact_mailer.rb
-
-
 5. Install Gems
 * Run: bundle install
-
 6. Create Production DB
 * Run: RAILS_ENV=production rake db:create
-
 7. Create Tables
 * Run: rake db:migrate RAILS_ENV=production
-
 8. Install imagemagick
 * Run: sudo apt-get install imagemagick
-
 9. Generate devise key
 * Run: RAILS_ENV=production rake secret
 * Paste results for production in PhotographyPortfolio/config/secrets.yml
-
-9. Modify
+10. Modify
 * Run: nano /etc/default/unicorn
 * Change 'APP_ROOT=/home/rails/rails_project' to 'APP_ROOT=/home/rails/PhotogrphyPortfolio'
-
-10. Restart unicorn and stop nginx service
+11. Restart unicorn and stop nginx service
 * Run: service unicorn restart
 * Run: service nginx stop
-
-11. Run your project
+12. Run your project
 * Run: rails server -e production -p 80
-
-12. Open your website in your web browser.
+13. Open your website in your web browser.
 
 =RailsAdmin: https://github.com/sferik/rails_admin
 * RailsAdmin is a Content Management Environment
