@@ -7,6 +7,7 @@ Sample: http://sabrx.com
 
 ##Features & Acknowledgements
 
+* Bootstrap Framework for Responsive UI (via [Bootstrap-Sass](https://github.com/twbs/bootstrap-sass))
 * Authentication (via [Devise](https://github.com/plataformatec/devise))
 * Content Management (via [RailsAdmin](https://github.com/sferik/rails_admin))
 * File upload (via [PaperClip](https://github.com/thoughtbot/paperclip))
