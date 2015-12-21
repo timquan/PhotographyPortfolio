@@ -7,6 +7,7 @@ Sample: http://sabrx.com
 
 ##Features & Acknowledgements
 
+* Ruby on Rails Web Application
 * Bootstrap Framework for Responsive UI (via [Bootstrap-Sass](https://github.com/twbs/bootstrap-sass))
 * Authentication (via [Devise](https://github.com/plataformatec/devise))
 * Content Management (via [RailsAdmin](https://github.com/sferik/rails_admin))
