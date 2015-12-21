@@ -7,6 +7,15 @@ Sample: http://sabrx.com
 
 ##Features
 
+* Authentication (via [Devise](https://github.com/plataformatec/devise))
+* Content Management (via [RailsAdmin](https://github.com/sferik/rails_admin))
+* File upload (via [PaperClip](https://github.com/thoughtbot/paperclip))
+* Image Cropping (via [Rails Admin JCrop](https://github.com/janx/rails_admin_jcrop))
+* Image resize (via [ImageMagick](http://www.imagemagick.org/script/index.php))
+* Contact webform using Action Mailer linked to specifiedto existing Gmail account.
+* Active Record ORM
+* MySQL DB
+
 This tutorials is based around Digital Ocean's one-click-app feature using Ruby on Rails image. 
 https://www.digitalocean.com/features/one-click-apps/ruby-on-rails/
 
@@ -55,7 +64,6 @@ Make sure your server has atleast 1GB of Ram or else MySQL may not install.
 14. Open your website in your web browser.
 
 ##RailsAdmin
-https://github.com/sferik/rails_admin
 
 * RailsAdmin is a Content Management Environment
 * Two gems, Paperclip and Imagemagick, added to allow file upload, scale, and image cropping.
