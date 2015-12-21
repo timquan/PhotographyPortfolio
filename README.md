@@ -5,14 +5,15 @@ Open source code to my Photography Portfolio web application.
 
 Sample: http://sabrx.com
 
-##Features
+##Features & Acknowledgements
 
 * Authentication (via [Devise](https://github.com/plataformatec/devise))
 * Content Management (via [RailsAdmin](https://github.com/sferik/rails_admin))
 * File upload (via [PaperClip](https://github.com/thoughtbot/paperclip))
 * Image Cropping (via [Rails Admin JCrop](https://github.com/janx/rails_admin_jcrop))
 * Image resize (via [ImageMagick](http://www.imagemagick.org/script/index.php))
-* Contact webform using Action Mailer linked to specifiedto existing Gmail account.
+* Image Popup (via [Lightbox2-Rails](https://github.com/gavinkflam/lightbox2-rails))
+* Contact webform using Action Mailer linked to specified to existing Gmail account.
 * Active Record ORM
 * MySQL DB
 
