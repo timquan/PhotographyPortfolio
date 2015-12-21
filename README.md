@@ -16,10 +16,11 @@ Sample: http://sabrx.com
 * Active Record ORM
 * MySQL DB
 
-This tutorials is based around Digital Ocean's one-click-app feature using Ruby on Rails image. 
+This tutorial's installation uses Digital Ocean's one-click-app feature using Ruby on Rails image. 
 https://www.digitalocean.com/features/one-click-apps/ruby-on-rails/
 
-It also uses the Paperclip Gem and Imagemagick
+You may apply this tutorial on other VPS or your own Private server or different DB. However, your mileage may vary. 
+
 ##Installation Guide
 
 Make sure your server has atleast 1GB of Ram or else MySQL may not install.
